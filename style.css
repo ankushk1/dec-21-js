@@ -1,0 +1,80 @@
+/* .grid-container {
+  background-color: rgb(44, 147, 199);
+  padding: 10px;
+  display: grid;
+  grid-auto-flow: column;
+  height: 300px;
+  grid-template-columns: repeat(3, auto);
+  grid-row-gap: 10px;
+  grid-column-gap: 20px;
+  grid-gap: 10px 20px;
+  grid-template-areas:
+    "header header header"
+    "sidebar sidebar content"
+    "footer footer footer";
+  justify-content: center; */
+/* justify-items: center; */
+/* align-content: space-evenly; */
+/* align-items: stretch; */
+/* } */
+
+/* .grid-item {
+  font-size: 2em;
+  text-align: center;
+  background-color: rgb(245, 116, 102);
+  border: 3px solid rgb(232, 170, 55);
+  font-style: italic;
+} */
+
+/* .item1 {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  grid-area: sidebar;
+  align-self: center;
+  justify-self: end;
+} */
+
+
+/* starting with value or value- */
+/* [class|=test] {
+  background-color: rgb(252, 109, 109);
+} */
+
+/* starting with value */
+/* [class^=test] {
+  background-color: rgb(252, 109, 109);
+} */
+
+/* ending with value */
+/* [class$=test] {
+  background-color: rgb(252, 109, 109);
+} */
+
+/* including substring of value */
+/* [class*=tes] {
+  background-color: rgb(252, 109, 109);
+} */
+
+:root{
+  --background-blue : rgb(136, 79, 150);
+  --font25: 35px
+}
+
+.grid-item {
+  background-color: rgb(98, 239, 159);
+  font-style: italic;
+  padding:0;
+}
+
+.grid{
+  background-color: var(--background-blue);
+  font-size: var(--font25)
+}
+
+.flex-box{
+  height: 300px
+}
