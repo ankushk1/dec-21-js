@@ -100,13 +100,77 @@
 //   console.log(i)
 // }
 
-const arr = [11, 12, 13, 14, 15];
-arr.forEach((elem, idx) => {
-  console.log(`element at index-${idx} is ${elem}`);
-});
+// const arr = [11, 12, 13, 14, 15];
+// arr.forEach((elem, idx) => {
+//   console.log(`element at index-${idx} is ${elem}`);
+// });
 
 // function add(num1,num2){
 //   return num1 + num2;
 // }
 
 // console.log(add(1,2))
+
+const arr = [1, 2, 3, 4, 5, 6];
+
+// push is to add at end of arr
+// pop is to remove at end of arr
+// shift is to remove at start of arr
+// unshift is to add at start of arr
+// arr.push(5)
+// arr.pop()
+// arr.shift()
+// arr.unshift(6)
+
+// from  which elem you want to add or reemovve elements
+// how many number of  elements you want too remove
+// After 2 parameters all other params will be added to the arr
+
+// Note - The splice method changes your original arr
+
+// arr.splice(2, 2)
+// console.log(arr)
+
+// Note - The slice method doesn't changes your original arr
+// console.log(arr.slice(1,3))
+
+// console.log(arr)
+
+//map always returns a array
+// const newArr2 = arr.map((el, idx) => {
+//   const res = el * idx;
+//   if(res === 0) {
+//     return res;
+//   }
+// });
+const newArr = arr.map((el, idx) => el % 2 == 0);
+console.log(newArr);
+// console.log(newArr2);
+
+const filteredArr = arr.filter((el) => el % 2 == 0);
+console.log(filteredArr);
+
+//When we know we have only one unique value in array that we want
+const finderArr = arr.find((el) => el == 1 );
+console.log(finderArr);
+
+const exampleArr= ["hey", "hello"]
+
+const finderArrIndex = exampleArr.findIndex((el) => {
+  //conditions
+
+  return el == "hey"
+});
+console.log(finderArrIndex);
+
+console.log(exampleArr.indexOf("hi"))
+console.log(arr.includes(1))
+
+
+let newStr =''
+exampleArr.forEach(el => newStr+=el + " ")
+console.log(newStr)
+
+console.log(exampleArr.join(" -- "))
+
+console.log(exampleArr.toString())
