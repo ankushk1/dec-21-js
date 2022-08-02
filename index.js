@@ -111,7 +111,7 @@
 
 // console.log(add(1,2))
 
-const arr = [1, 2, 3, 4, 5, 6];
+// const arr = [1, 2, 3, 4, 5, 6];
 
 // push is to add at end of arr
 // pop is to remove at end of arr
@@ -143,34 +143,104 @@ const arr = [1, 2, 3, 4, 5, 6];
 //     return res;
 //   }
 // });
-const newArr = arr.map((el, idx) => el % 2 == 0);
-console.log(newArr);
-// console.log(newArr2);
+// const newArr = arr.map((el, idx) => el % 2 == 0);
+// console.log(newArr);
+// // console.log(newArr2);
 
-const filteredArr = arr.filter((el) => el % 2 == 0);
-console.log(filteredArr);
+// const filteredArr = arr.filter((el) => el % 2 == 0);
+// console.log(filteredArr);
 
-//When we know we have only one unique value in array that we want
-const finderArr = arr.find((el) => el == 1 );
-console.log(finderArr);
+// //When we know we have only one unique value in array that we want
+// const finderArr = arr.find((el) => el == 1 );
+// console.log(finderArr);
 
-const exampleArr= ["hey", "hello"]
+// const exampleArr= ["hey", "hello"]
 
-const finderArrIndex = exampleArr.findIndex((el) => {
-  //conditions
+// const finderArrIndex = exampleArr.findIndex((el) => {
+//   //conditions
 
-  return el == "hey"
-});
-console.log(finderArrIndex);
+//   return el == "hey"
+// });
+// console.log(finderArrIndex);
 
-console.log(exampleArr.indexOf("hi"))
-console.log(arr.includes(1))
+// console.log(exampleArr.indexOf("hi"))
+// console.log(arr.includes(1))
 
 
-let newStr =''
-exampleArr.forEach(el => newStr+=el + " ")
-console.log(newStr)
+// let newStr =''
+// exampleArr.forEach(el => newStr+=el + " ")
+// console.log(newStr)
 
-console.log(exampleArr.join(" -- "))
+// console.log(exampleArr.join(" -- "))
 
-console.log(exampleArr.toString())
+// console.log(exampleArr.toString())
+
+const obj = {
+  username : "Jon",
+  age: 20,
+  address : {
+    city:["New Delhi", "Faridabad", "Mumbai"],
+    country: "India"
+  },
+  userDetails: function(name, age){
+    console.log(`${this.username} age is ${this.age}`)
+  }
+}
+// non primitive - it has reference
+
+// obj.city = "Delhi"
+
+// console.log(obj.username)
+// obj.userDetails()
+
+
+const obj2 = Object.create(obj)
+obj2.username1 = "ABC"
+obj2.age1 = 11
+console.log(obj2)
+obj2.userDetails()
+
+const keyVals = Object.keys(obj).map(key => {
+    return [key, obj[key]]
+})
+
+console.log(keyVals)
+
+keyVals.map(entry => console.log(entry[0], entry[1]))
+
+
+
+// We can not add multiple values with same key
+// These methods are used to merge multiple objects
+const obj3 ={...obj, ...obj2}
+// const obj3 =Object.assign(obj, obj2)
+
+console.log(obj3)
+
+
+
+const newObj = {
+  message: "Hey",
+  from:"Tom"
+}
+
+// This method does allow you to either add a value nor update any value
+Object.freeze(newObj)
+newObj.message = "Hi"
+newObj.newKey = 20
+
+console.log(newObj)
+
+
+
+const newObj2 = {
+  message: "Hey",
+  from:"Tom"
+}
+
+//This method allows you to only update the values but doesn't allow to add new values
+Object.seal(newObj2)
+newObj2.message = "Hi"
+newObj2.newKey = 20
+
+console.log(newObj2)
