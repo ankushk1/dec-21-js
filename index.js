@@ -194,53 +194,153 @@ const obj = {
 // obj.userDetails()
 
 
-const obj2 = Object.create(obj)
-obj2.username1 = "ABC"
-obj2.age1 = 11
-console.log(obj2)
-obj2.userDetails()
+// const obj2 = Object.create(obj)
+// obj2.username1 = "ABC"
+// obj2.age1 = 11
+// console.log(obj2)
+// obj2.userDetails()
 
-const keyVals = Object.keys(obj).map(key => {
-    return [key, obj[key]]
-})
+// const keyVals = Object.keys(obj).map(key => {
+//     return [key, obj[key]]
+// })
 
-console.log(keyVals)
+// console.log(keyVals)
 
-keyVals.map(entry => console.log(entry[0], entry[1]))
-
-
-
-// We can not add multiple values with same key
-// These methods are used to merge multiple objects
-const obj3 ={...obj, ...obj2}
-// const obj3 =Object.assign(obj, obj2)
-
-console.log(obj3)
+// keyVals.map(entry => console.log(entry[0], entry[1]))
 
 
 
-const newObj = {
-  message: "Hey",
-  from:"Tom"
-}
+// // We can not add multiple values with same key
+// // These methods are used to merge multiple objects
+// const obj3 ={...obj, ...obj2}
+// // const obj3 =Object.assign(obj, obj2)
 
-// This method does allow you to either add a value nor update any value
-Object.freeze(newObj)
-newObj.message = "Hi"
-newObj.newKey = 20
-
-console.log(newObj)
+// console.log(obj3)
 
 
 
-const newObj2 = {
-  message: "Hey",
-  from:"Tom"
-}
+// const newObj = {
+//   message: "Hey",
+//   from:"Tom"
+// }
 
-//This method allows you to only update the values but doesn't allow to add new values
-Object.seal(newObj2)
-newObj2.message = "Hi"
-newObj2.newKey = 20
+// // This method does allow you to either add a value nor update any value
+// Object.freeze(newObj)
+// newObj.message = "Hi"
+// newObj.newKey = 20
 
-console.log(newObj2)
+// console.log(newObj)
+
+
+
+// const newObj2 = {
+//   message: "Hey",
+//   from:"Tom"
+// }
+
+// //This method allows you to only update the values but doesn't allow to add new values
+// Object.seal(newObj2)
+// newObj2.message = "Hi"
+// newObj2.newKey = 20
+
+// console.log(newObj2)
+
+
+// let user1 = {
+//   firstName: "Rutvij",
+//   lastname: "Patel",
+//   // printFullName: function (message, age) {
+//   //   console.log(this);
+//   //   console.log(`${message} ${this.firstName} ${this.lastname}
+//   //   age is ${age}`);
+//   // }
+// };
+
+// function printFullName(message, age) {
+//   console.log(this)
+//   console.log(`${message} ${this.firstName} ${this.lastname}
+//   age is ${age}`);
+// }
+
+// let user2 = {
+//   firstName1: "Ankur",
+//   lastname1: "Shrivastav"
+// };
+
+// //function borrowing
+// let myNewFunc = printFullName.bind(user2, "Hey", 25);
+// myNewFunc()
+// // user1.printFullName()
+
+// printFullName.call(user2, "Hey", 25);
+// printFullName.apply(user2, ["Hey", 25]);
+
+// function sum (num1, num2 , num3,  ...args) {
+//   console.log(num1, num2 ,args)
+//   console.log(args[0] + args[1])
+//   return num1 + num2;
+// }
+
+// console.log(sum(3,6,4,7,8,9,10))
+
+//You should not pass same key name to the objects that you want to concatinate
+// const user3 = {...user1, ...user2}
+
+// console.log(user3)
+
+// const arr1 = [1,2,3,4,5]
+// const arr2 = [11,12,13,14,15]
+
+// let arr3 = [...arr1, ...arr2]
+
+// console.log(arr3)
+
+// //destructuring
+// let [one , num2, num3, ...nums] = arr1
+
+// // let one = arr1[0]
+// // let two = arr1[1]
+
+// console.log(one)
+// console.log(num2)
+// console.log(num3)
+// console.log(nums)
+
+//Spread operator when we are copying arr or objects
+//Rest operator when we pass rest the the params/values in a keyword
+
+// let user = {
+//   firstName1: "Ankur",
+//   lastname1: "Shrivastav",
+//   address:{
+//     city: "Delhi",
+//     country: "India"
+//   }
+// };
+
+// console.log(user.firstName1)
+
+// let { firstName1, lastname1 } = user;
+
+// console.log(firstName1);
+
+// function getSomeDatafromObj(userObj) {
+  
+// }
+
+// console.log(user.address.city)
+
+
+// let { firstName1, address: {city, country} } = user;
+
+
+// let city = user.address.city
+// let country = user.address.country
+// console.log(city, country)
+
+// console.log(getSomeDatafromObj(user);
+// console.log(getSomeDatafromObj(user).country);
+
+
+// const country = getSomeDatafromObj(user)
+// console.log(country.rest.country)
