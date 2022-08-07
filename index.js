@@ -166,7 +166,6 @@
 // console.log(exampleArr.indexOf("hi"))
 // console.log(arr.includes(1))
 
-
 // let newStr =''
 // exampleArr.forEach(el => newStr+=el + " ")
 // console.log(newStr)
@@ -176,23 +175,22 @@
 // console.log(exampleArr.toString())
 
 const obj = {
-  username : "Jon",
+  username: "Jon",
   age: 20,
-  address : {
-    city:["New Delhi", "Faridabad", "Mumbai"],
+  address: {
+    city: ["New Delhi", "Faridabad", "Mumbai"],
     country: "India"
   },
-  userDetails: function(name, age){
-    console.log(`${this.username} age is ${this.age}`)
+  userDetails: function (name, age) {
+    console.log(`${this.username} age is ${this.age}`);
   }
-}
+};
 // non primitive - it has reference
 
 // obj.city = "Delhi"
 
 // console.log(obj.username)
 // obj.userDetails()
-
 
 // const obj2 = Object.create(obj)
 // obj2.username1 = "ABC"
@@ -208,16 +206,12 @@ const obj = {
 
 // keyVals.map(entry => console.log(entry[0], entry[1]))
 
-
-
 // // We can not add multiple values with same key
 // // These methods are used to merge multiple objects
 // const obj3 ={...obj, ...obj2}
 // // const obj3 =Object.assign(obj, obj2)
 
 // console.log(obj3)
-
-
 
 // const newObj = {
 //   message: "Hey",
@@ -231,8 +225,6 @@ const obj = {
 
 // console.log(newObj)
 
-
-
 // const newObj2 = {
 //   message: "Hey",
 //   from:"Tom"
@@ -244,7 +236,6 @@ const obj = {
 // newObj2.newKey = 20
 
 // console.log(newObj2)
-
 
 // let user1 = {
 //   firstName: "Rutvij",
@@ -325,14 +316,12 @@ const obj = {
 // console.log(firstName1);
 
 // function getSomeDatafromObj(userObj) {
-  
+
 // }
 
 // console.log(user.address.city)
 
-
 // let { firstName1, address: {city, country} } = user;
-
 
 // let city = user.address.city
 // let country = user.address.country
@@ -341,6 +330,80 @@ const obj = {
 // console.log(getSomeDatafromObj(user);
 // console.log(getSomeDatafromObj(user).country);
 
-
 // const country = getSomeDatafromObj(user)
 // console.log(country.rest.country)
+
+// const data = {
+//   set name(val) {
+//     this._name = val.length > 3 ? val : "Invalid val";
+//   },
+//   get name() {
+//     return this._name;
+//   }
+// };
+
+// data.name = "Sam"
+// console.log(data.name)
+
+// Callbacks
+
+// Callbacks are functions passes in another function
+
+// function hey(name) {
+//   console.log(`hey ${name}`);
+// }
+
+// function hi(name) {
+//   console.log(`hi ${name}`);
+// }
+
+// function callMessage(name, callback) {
+//   callback(name);
+// }
+
+// // let user1 = "Ajay"
+// callMessage("Ajay", hey);
+// callMessage("Tom", hi);
+
+// setInterval(()=>{
+//   console.log('Call first')
+// }, 5000)
+
+// function getOddNums(num) {
+//   return num % 2 != 0;
+// }
+
+// function getEvenNums(num) {
+//   return num % 2 == 0;
+// }
+
+// const filterNums = (nums, callback) => {
+//   const data = nums.filter(num => callback(num))
+//   console.log(data)
+//   console.log('Completed filter')
+//   return data
+// }
+
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// filterNums(arr, getOddNums)
+// filterNums(arr, getEvenNums)
+
+const outer = () => {
+  let a = "a";
+  const inner = () => {
+    console.log("---", a);
+    let b = 'b'
+    const innerinner = () => {
+      console.log(a,b);
+    }
+    return innerinner
+  };
+  return inner;
+};
+
+//The outer func call is executed and it has returned an inner func
+// console.log(outer());
+
+const callOuter = outer()()();
+// console.log(callOuter);
+// callOuter()
