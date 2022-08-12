@@ -388,22 +388,190 @@ const obj = {
 // filterNums(arr, getOddNums)
 // filterNums(arr, getEvenNums)
 
-const outer = () => {
-  let a = "a";
-  const inner = () => {
-    console.log("---", a);
-    let b = 'b'
-    const innerinner = () => {
-      console.log(a,b);
-    }
-    return innerinner
-  };
-  return inner;
-};
+// const outer = () => {
+//   let a = "a";
+//   const inner = () => {
+//     console.log("---", a);
+//     let b = 'b'
+//     const innerinner = () => {
+//       console.log(a,b);
+//     }
+//     return innerinner
+//   };
+//   return inner;
+// };
 
 //The outer func call is executed and it has returned an inner func
 // console.log(outer());
 
-const callOuter = outer()()();
+// const callOuter = outer()()();
 // console.log(callOuter);
 // callOuter()
+
+//Maps and Sets in JS
+
+// let map = new Map();
+
+// set - to add key/value pair in Map
+// get - to get the value using key
+// has - return a boolean saying val present or not
+// size - return the map size
+// delete - deletes a val based on key
+// clear - removes all the key/vals
+
+//first way to add values in map
+// map.set(1, "one")
+// map.set(2, "two")
+// map.set(3, "three")
+
+// console.log(map.get(2));
+
+// for (let keys of map.keys()){
+//   console.log(keys);
+// }
+
+// for (let keys of map.values()){
+//   console.log(keys);
+// }
+
+// console.log(map.has(1));
+// map.delete(2)
+// map.clear()
+// console.log(map);
+
+// console.log(map.size);
+
+//Second way to create a map
+// const map2 = new Map([
+//   [1, "one"],
+//   [2, "two"],
+//   [3, "three"]
+// ])
+// console.log(map2);
+
+//HashSet
+
+// let set = new Set();
+
+// set.add("ABC")
+// set.add("Sam")
+
+// for(let val of set) {
+//   console.log(val);
+// }
+// console.log(set.has("ABC"));
+// // set.delete("ABC")
+// set.clear()
+// console.log(set);
+// console.log(set.size);
+
+// // Second way to declare set
+
+// let set2 = new Set([
+//   "one", "two"
+// ])
+
+// console.log(set2);
+
+//Promises
+
+// const num = 2;
+// const myPromise = new Promise((resolve, reject) => {
+//   if (num === 2) {
+//     setTimeout(() => {
+//       resolve("Success");
+//     }, 3000);
+//   } else {
+//     setTimeout(() => {
+//       reject("Failure");
+//     }, 3000);
+//   }
+// });
+
+// console.log(myPromise);
+// myPromise
+//   .then((response) => console.log(response))
+//   .catch((err) => console.log(err));
+
+// let message = "";
+// const callPromise = async () => {
+//   // myPromise
+//   // .then((response) =>{
+//   //   message = response
+//   //   console.log(message);
+//   //   console.log(response);
+//   // })
+//   // .catch((err) => console.log(err))
+//   // .finally(() => console.log('Finally called'))
+//   // console.log(myPromise);
+
+//   try {
+//     let resultFromPromise = await myPromise;
+//     console.log(resultFromPromise);
+//   } catch (err) {
+//     console.log(err);
+//   } finally {
+//     console.log('finally called')
+//   }
+
+//   console.log("above code executed");
+// };
+
+// callPromise();
+
+// Methods - GET, POST, PUT, DELETE, PATCH
+// Get call
+// fetch("https://jsonplaceholder.typicode.com/todos")
+//   .then((response) => response.json())
+//   .then((json) => console.log(json))
+//   .catch((err) => console.log(err));
+
+// //Post Call
+// const callObj = {
+//   method: "POST",
+//   body: JSON.stringify({
+//     title: "new title",
+//     body: "new body",
+//     userId: 33
+//   })
+// };
+
+// fetch("https://jsonplaceholder.typicode.com/posts", {
+//   method: "POST",
+//   body: JSON.stringify({
+//     title: "new title",
+//     body: "new body",
+//     userId: 33
+//   })
+// })
+//   .then((response) => response.json())
+//   .then((json) => console.log(json))
+//   .catch((err) => console.log(err));
+
+
+// //Put Call
+// const callObj = {
+//   method: "PUT",
+//   body: JSON.stringify({
+//     id:1,
+//     title: "new title",
+//     body: "new body",
+//     userId: 33
+//   })
+// };
+
+// fetch("https://jsonplaceholder.typicode.com/posts/1", callObj)
+//   .then((response) => response.json())
+//   .then((json) => console.log(json))
+//   .catch((err) => console.log(err));
+
+//Delete Call
+const callObj = {
+  method: "DELETE",
+};
+
+fetch("https://jsonplaceholder.typicode.com/posts/1", callObj)
+  .then((response) => response.json())
+  .then((json) => console.log(json))
+  .catch((err) => console.log(err));
+
