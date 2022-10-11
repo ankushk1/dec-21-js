@@ -72,9 +72,17 @@
 
 .grid{
   background-color: var(--background-blue);
+  background-image: none;
   font-size: var(--font25)
 }
 
 .flex-box{
   height: 300px
+}
+
+
+.input{
+  background-color: rgba(166, 229, 89, 0.811);
+  width: 150px;
+  height: 50px;
 }

@@ -548,7 +548,6 @@ const obj = {
 //   .then((json) => console.log(json))
 //   .catch((err) => console.log(err));
 
-
 // //Put Call
 // const callObj = {
 //   method: "PUT",
@@ -566,12 +565,244 @@ const obj = {
 //   .catch((err) => console.log(err));
 
 //Delete Call
-const callObj = {
-  method: "DELETE",
-};
+// const callObj = {
+//   method: "DELETE",
+// };
 
-fetch("https://jsonplaceholder.typicode.com/posts/1", callObj)
-  .then((response) => response.json())
-  .then((json) => console.log(json))
-  .catch((err) => console.log(err));
+// fetch("https://jsonplaceholder.typicode.com/posts/1", callObj)
+//   .then((response) => response.json())
+//   .then((json) => console.log(json))
+//   .catch((err) => console.log(err));
 
+// const getDataFromApi = async () => {
+//   const response = await fetch("https://jsonplaceholder.typicode.com/todos")
+//   const data = await response.json()
+//   console.log(data)
+// }
+
+// getDataFromApi()
+
+// axios
+
+// const getDataFromApi2 = async () => {
+//   const response = await axios("https://jsonplaceholder.typicode.com/todos", {
+//     method: "GET"
+//   });
+//   console.log(response.data);
+// };
+
+// // getDataFromApi2();
+
+// const bodyObj = {
+//   id:1,
+//   userId: 1,
+//   title:"New title",
+//   body: "new body",
+
+// }
+
+// const postResponse = await axios.post("https://jsonplaceholder.typicode.com/posts",
+// {
+//   id:1,
+//   userId: 1,
+//   title:"New title",
+//   body: "new body",
+
+// })
+// console.log(postResponse);
+
+// const putResponse = await axios.put("https://jsonplaceholder.typicode.com/posts/1",bodyObj)
+// console.log(putResponse);
+
+// const deleteResponse = await axios.delete("https://jsonplaceholder.typicode.com/posts/1")
+// console.log(deleteResponse);
+
+// import * as mainImports from './main.js'
+
+// console.log(mainImports);
+// import age from './main.js'
+
+// console.log(arr)
+
+// console.log(userage);
+
+// userInfo(name, age)
+
+// console.dir(document)
+// console.dir(document); // an object or DOM
+
+// console.log(window.document === document)
+// const para1 = document.getElementById("para")
+// para1.innerText = "Updated Para text"
+
+// console.log(para1.childNodes)
+// console.dir(para1)
+
+// console.dir(para1)
+// const paraClass = document.getElementsByClassName("para-class")
+// console.dir(paraClass[1])
+
+// const div = document.getElementById('div')
+// console.dir(div)
+
+// const pElem = document.getElementsByTagName('div')
+// console.dir(pElem)
+
+// const pElem1 = document.getElementsByName('para-name')
+// console.dir(pElem1)
+
+// const qsById = document.querySelector('#div')
+// console.dir(qsById)
+// console.dir(qsById.children[2])
+
+// attribute key+value
+
+// const div = document.createElement('div');
+// console.dir(div)
+// div.innerHTML =
+// ` <h1>Dynamic heading  -
+//             added</h1>
+//   <div>
+//     <p>
+//     Para dynamic
+//     </p>
+//   </div>
+
+// `
+// document.body.appendChild(div)
+// div.id = "new-id"
+// div.className = "new-class new-class2"
+// div.classList.add("new-class3")
+// const newH1 = document.createElement('h1');
+
+// newH1.innerText = "Dynamic added text"
+// div.appendChild(newH1);
+// document.body.innerHTML = ` <h1>Dynamic heading added</h1>
+//    <div>
+//      <p>
+//      Para dynamic
+//      </p>
+//    </div>
+// `
+
+// const para = document.getElementById("para");
+// console.dir(para)
+// const h1 = document.createElement("h1");
+// h1.innerText = "Dynamic H1"
+
+// para.after(h1);
+
+// const nodeClone = para.cloneNode(false)
+// console.log(nodeClone)
+
+// ('input')
+// console.dir(input)const menu = document.getElementById("menu")
+// // console.dir(menu)
+// // const newLi = document.createElement("li");
+// // newLi.innerText = "New list Item";
+
+// // menu.insertBefore(newLi, menu.lastElementChild)
+
+// // menu.setAttribute("name", "ul")
+
+// // // menu.classList.add("second-class")
+
+// // const input = document.querySelector
+// input.setAttribute("type", "number")
+// input.setAttribute("step", "5")
+// input.setAttribute("min", "5")
+// input.setAttribute("max", "50")
+
+// input.removeAttribute('step')
+// input.removeAttribute('max')
+
+// console.dir(input)
+
+// input.style.backgroundColor = "red"
+// input.style.width = "150px"
+// input.style.opacity = 1
+
+// input.classList.add("input")
+
+// input.setAttribute("class","input class2")
+
+// input.className += "input class2 "
+
+// input.setAttribute("id", "input")
+// input.id+="input"
+
+// const s = input.getComputedStyle()
+// console.log(s);
+
+// const div = document.querySelector('.input')
+// const styles = getComputedStyle(div)
+
+// console.log(styles.backgroundColor);
+
+// const onBtnClick = () => {
+//   console.log('clicked');
+// }
+
+// const btn = document.querySelector('.btn')
+// // console.dir(btn)
+// // btn.addEventListener('mouseleave', onBtnClick)
+
+// btn.onmouseleave = onBtnClick
+// console.log(btn.onclick );
+
+// const input = document.querySelectorAll('#input');
+// console.dir(input)
+
+// //input as an array
+// input.forEach( inp => {
+//   inp.addEventListener('change', (event) => {
+//     console.dir(event.target);
+//     console.log(event.target.value);
+//   })
+// })
+
+// const sizeRadios = document.querySelector('.size')
+// sizeRadios.addEventListener('input' ,
+//   (event) => {
+//     if(event.target.getAttribute('name') == "size") {
+//       console.dir(event.target);
+//       console.log(event.target.value);
+//     }
+//   }
+// )
+
+const checkBoxes = document.querySelector(".checkbox");
+
+checkBoxes.addEventListener("input", (event) => {
+  // if (event.target.getAttribute("name") == "color") {
+  //   console.dir(event.target);
+  // }
+
+  // const checkBoxValsArr =
+  // document.querySelectorAll("input[name = color]");
+
+  // console.log(checkBoxValsArr);
+
+  // const checkedVals = [];
+  // checkBoxValsArr.forEach((val) => {
+  //   val.checked ? checkedVals.push(val.value) : null;
+  // });
+  // console.log(checkedVals);
+
+  const checkedVals = [
+    ...checkBoxes.querySelectorAll("input[name = color]:checked")
+  ].map((inp) => inp.value);
+  console.log(checkedVals);
+});
+
+const selectBox = document.querySelector("#framework");
+
+console.dir(selectBox);
+
+selectBox.addEventListener("change", (e) => {
+  console.log(e.target.value);
+  const options = e.target.options;
+  console.log(e.target.options);
+  console.log(options.selectedIndex);
+  console.log(options[options.selectedIndex].text);
+});
